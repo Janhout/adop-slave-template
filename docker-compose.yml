@@ -2,7 +2,7 @@ jenkins-slave:
   container_name: ${JENKINS_SLAVE_NAME}
   restart: always
   image: janhout/adop-jenkins-slave:0.1.7
-  net: ${CUSTOM_NETWORK_NAME}
+  net: ${DOCKER_NETWORK_NAME}
   privileged: true
   log_driver: "syslog"
   log_opt:
