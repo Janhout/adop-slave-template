@@ -1,5 +1,5 @@
 jenkins-slave:
-  container_name: jenkins-slave-${JENKINS_SLAVE_SUFFIX}
+  container_name: ${JENKINS_SLAVE_NAME}
   restart: always
   image: janhout/adop-jenkins-slave:0.1.7
   net: ${CUSTOM_NETWORK_NAME}
@@ -7,9 +7,9 @@ jenkins-slave:
   log_driver: "syslog"
   log_opt:
     syslog-address: "udp://${LOGSTASH_HOST}:25826"
-    tag: "jenkins-slave-${JENKINS_SLAVE_SUFFIX}"
+    tag: "${JENKINS_SLAVE_NAME}"
   environment:
-    SLAVE_NAME: jenkins-slave-${JENKINS_SLAVE_SUFFIX}
+    SLAVE_NAME: ${JENKINS_SLAVE_NAME}
     SLAVE_LABELS: "aws ldap ftp java8 docker ftp ${NEW_SLAVE_LABELS}"
     SWARM_PASSWORD: ${SWARM_PASSWORD}
     SLAVE_EXECUTORS: ${SLAVE_EXECUTORS}
