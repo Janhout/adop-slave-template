@@ -10,7 +10,7 @@ jenkins-slave:
     tag: "jenkins-slave-${JENKINS_SLAVE_SUFFIX}"
   environment:
     SLAVE_NAME: jenkins-slave-${JENKINS_SLAVE_SUFFIX}
-    SLAVE_LABELS: "aws ldap ftp java8 docker ftp"
+    SLAVE_LABELS: "aws ldap ftp java8 docker ftp ${NEW_SLAVE_LABELS}"
     SWARM_PASSWORD: ${SWARM_PASSWORD}
     SLAVE_EXECUTORS: ${SLAVE_EXECUTORS}
     INITIAL_ADMIN_USER: ${INITIAL_ADMIN_USER}
